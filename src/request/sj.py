@@ -5,7 +5,7 @@ import requests
 from src.data_json.work_with_json import WorkWithJson
 
 
-class RequestsSJ(WorkWithAbstract):
+class RequestSJ(WorkWithAbstract):
     def __init__(self, keyword, page=1):
         self.url = URL_SJ
         self.keyword = keyword
