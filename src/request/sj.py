@@ -8,6 +8,7 @@ from src.data_json.work_with_json import WorkWithJson
 class RequestsSJ(WorkWithAbstract):
     def __init__(self, keyword, page=1):
         self.url = URL_SJ
+        self.keyword = keyword
         self.params = {'keywords': keyword, 'page': page}
 
     def request(self):
