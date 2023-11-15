@@ -15,7 +15,7 @@ class Vacancy:
                 f'Зарплата: {self.salary}')
 
 
-with open('../cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
+with open('cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
     vacancy = json.load(file)
     vacancy_s = []
     for i in vacancy:
