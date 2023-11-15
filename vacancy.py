@@ -1,5 +1,6 @@
 import json
 
+
 class Vacancy:
     def __init__(self, title, link, description, salary):
         self.title = title
@@ -12,6 +13,7 @@ class Vacancy:
                 f'Сайт: {self.link} \n'
                 f'Описание: {self.description} \n'
                 f'Зарплата: {self.salary}')
+
 
 with open('../cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
     vacancy = json.load(file)
