@@ -1,5 +1,9 @@
 from src.request.hh import RequestHH
+from src.request.sj import RequestsSJ
 
-a = RequestHH('python')
-a.request()
+hh = RequestHH('python')
+hh.request()
+
+sj = RequestsSJ('python')
+sj.request()
 
