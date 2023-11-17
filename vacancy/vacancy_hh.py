@@ -27,7 +27,5 @@ with open('../cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
                                      i['salary']['to']))
         else:
             pass
-        # vacancy_s.append(Vacancy(i['profession'], i['link'], i['candidat'], i['payment_from']))
-        # vacancy_s.append(Vacancy(i['name'], i['area'], i['snippet'], i['salary']['from']))
 for vacancy in vacancy_s:
     print(repr(vacancy))
