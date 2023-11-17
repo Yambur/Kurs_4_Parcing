@@ -22,6 +22,7 @@ with open('../cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
     vacancy = json.load(file)
     vacancy_s = []
     for i in vacancy:
-        vacancy_s.append(VacancySJ(i['profession'], i['town']['title'], i['candidat'], i['payment_from'], i['payment_to']))
+        vacancy_s.append(
+            VacancySJ(i['profession'], i['town']['title'], i['candidat'], i['payment_from'], i['payment_to']))
 for vacancy in vacancy_s:
     print(vacancy)
