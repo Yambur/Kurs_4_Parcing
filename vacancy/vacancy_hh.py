@@ -28,4 +28,4 @@ with open('../cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
         else:
             pass
 for vacancy in vacancy_s:
-    print(repr(vacancy))
+    print(vacancy)
