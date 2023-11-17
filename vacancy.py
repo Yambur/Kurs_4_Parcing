@@ -12,7 +12,8 @@ class Vacancy:
         return (f'Вакансии: {self.title} \n'
                 f'Сайт: {self.link} \n'
                 f'Описание: {self.description} \n'
-                f'Зарплата: {self.salary}')
+                f'Зарплата: {self.salary} \n'
+                '')
 
 
 with open('cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
@@ -21,4 +22,4 @@ with open('cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
     for i in vacancy:
         vacancy_s.append(Vacancy(i['profession'], i['link'], i['candidat'], i['payment_from']))
 for vacancy in vacancy_s:
-    print(vacancy)
+    print(repr(vacancy))
