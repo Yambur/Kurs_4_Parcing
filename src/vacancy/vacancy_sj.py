@@ -1,5 +1,7 @@
 import json
 
+from config import JSON_JS
+
 
 class VacancySJ:
     def __init__(self, title, city, description, salary_from, salary_to):
@@ -10,19 +12,18 @@ class VacancySJ:
         self.salary_to = salary_to
 
     def __repr__(self):
-        return (f'Вакансия: {self.title} \n'
+        return (f'\nВакансия: {self.title} \n'
                 f'Город: {self.city} \n'
                 f'Описание и требования: {self.description} \n'
-                f'Зарплата от: {self.salary_from} \n'
-                f'Зарплата до: {self.salary_to} \n'
-                '')
+                f'Зарплата от {self.salary_from} до {self.salary_to}\n'
+                f"{'-' * 50}\n")
 
 
-with open('../../cache_json/cache_hh.json', 'r', encoding='utf-8') as file:
-    vacancy = json.load(file)
-    vacancy_s = []
-    for i in vacancy:
-        vacancy_s.append(
-            VacancySJ(i['profession'], i['town']['title'], i['candidat'], i['payment_from'], i['payment_to']))
-for vacancy in vacancy_s:
-    print(vacancy)
+def print_json_sj():
+    with open(JSON_JS, 'r', encoding='utf-8') as file:
+        vacancy = json.load(file)
+        vacancy_sj = []
+        for i in vacancy:
+            vacancy_sj.append(
+                VacancySJ(i['profession'], i['town']['title'], i['candidat'], i['payment_from'], i['payment_to']))
+    return vacancy_sj

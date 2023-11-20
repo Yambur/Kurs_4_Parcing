@@ -1,9 +1,10 @@
-from src.request.hh import RequestHH
-from src.request.sj import RequestSJ
 
-hh = RequestHH('python')
-hh.request()
+from src.user_dialog.dialog_app import Dialog
 
-#sj = RequestSJ('python')
-#sj.request()
 
+def main():
+    Dialog()
+
+
+if __name__ == '__main__':
+    main()
