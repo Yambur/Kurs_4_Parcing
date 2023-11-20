@@ -36,3 +36,4 @@ def print_json_hh():
             else:
                 pass
         return vacancy_s
+
