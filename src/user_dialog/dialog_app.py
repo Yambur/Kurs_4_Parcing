@@ -6,7 +6,8 @@ from src.vacancy.vacancy_sj import print_json_sj
 
 class Dialog:
     pass
-
+    """Начинаем диалог с пользователем и выбираем сайт для парсинга.
+    Затем вводим ключевое слово"""
     print("Привет, давай спарсим сайт")
     print("Давай ты выберешь цифру сайта и нажмешь ENTER")
     print("1 - HeadHunter")
@@ -23,6 +24,8 @@ class Dialog:
             site = RequestSJ(keyword).request()
             print(print_json_sj())
         else:
+            """Зацикливаем метод, пока пользователю не надоест баловаться
+            и он не введет нужную нам цифру"""
             print("Такого сайта у нас нет, попробуй еще раз")
             continue
 

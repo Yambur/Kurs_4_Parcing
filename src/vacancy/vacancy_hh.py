@@ -4,7 +4,8 @@ from config import JSON_HH
 
 
 class VacancyHH:
-    def __init__(self, title, city, requirements, description, salary_from, salary_to):
+    """Определяем класс и выводим его данные в консоль"""
+    def __init__(self, title: str, city: str, requirements: str, description: str, salary_from, salary_to):
         self.title = title
         self.city = city
         self.requirements = requirements
@@ -22,6 +23,7 @@ class VacancyHH:
 
 
 def print_json_hh():
+    """Выводим в консоль нужные нам индексы и их значения"""
     with open(JSON_HH, 'r', encoding='utf-8') as file:
         vacancy = json.load(file)
         vacancy_s = []
