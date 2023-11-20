@@ -31,9 +31,14 @@ def print_json_hh():
             if 'name' in i and 'area' in i and 'snippet' in i and i['salary'] is not None and 'from' in i['salary']:
                 vacancy_s.append(
                     VacancyHH(i['name'], i['area']['name'], i['snippet']['requirement'], i['snippet']['responsibility'],
-                              i['salary']['from'],
-                              i['salary']['to']))
+                              i['salary']['from'] if i['salary']['from'] else 0,
+                              i['salary']['to'] if i['salary']['to'] else 0))
             else:
                 pass
         return vacancy_s
 
+
+"""a = 'asdsd'
+a.replace()
+b = []
+b.sort(key=lambda x: x['salary']['from'], reverse=True)"""

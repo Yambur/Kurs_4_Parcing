@@ -12,7 +12,11 @@ class RequestHH(WorkWithAbstract):
         self.url = URL_HH
         self.keyword = keyword
         self.area = area
-        self.parameter = {'text': self.keyword, 'area': self.area}
+        self.parameter = {'text': self.keyword, 'area': self.area, 'only_with_salary': True}
+
+    def get_vacancies(self):
+        if self.only_with_salary:
+            self.parameter['only_with_salary'] = True
 
     def request(self):
         """Заносим парсинг в json файл"""

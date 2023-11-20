@@ -18,10 +18,14 @@ class Dialog:
         if website == '1':
             keyword = input("Введите ключевое слово по которому будем парсить\n")
             site = RequestHH(keyword).request()
-            print(print_json_hh())
+            sort_hh = print_json_hh()
+            sort_hh.sort(key=lambda x: x.salary_to, reverse=True)
+            print(sort_hh)
         elif website == '2':
             keyword = input("Введите ключевое слово по которому будем парсить\n")
             site = RequestSJ(keyword).request()
+            sort_sj = print_json_sj()
+            sort_sj.sort(key=lambda x: x.salary_to, reverse=True)
             print(print_json_sj())
         else:
             """Зацикливаем метод, пока пользователю не надоест баловаться
