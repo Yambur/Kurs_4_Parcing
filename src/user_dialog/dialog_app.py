@@ -20,13 +20,34 @@ class Dialog:
             site = RequestHH(keyword).request()
             sort_hh = print_json_hh()
             sort_hh.sort(key=lambda x: x.salary_to, reverse=True)
-            print(sort_hh)
+            print("Обратите внимание, что вакансии показываются от большей з/п к меньшей")
+            print("Укажите сколько вакансий вы хотели бы посмотреть цифрой\n"
+                  "Если хотите посмотреть весь список, то напишите слово 'все'")
+            user_vacancy = input()
+            if user_vacancy.lower() == 'все':
+                print(sort_hh)
+            else:
+                try:
+                    num_vacancies = int(user_vacancy)
+                    print(sort_hh[:num_vacancies])
+                except ValueError:
+                    print("Пожалуйста, введите число или 'все'")
         elif website == '2':
             keyword = input("Введите ключевое слово по которому будем парсить\n")
             site = RequestSJ(keyword).request()
             sort_sj = print_json_sj()
-            sort_sj.sort(key=lambda x: x.salary_to, reverse=True)
-            print(print_json_sj())
+            print("Обратите внимание, что вакансии показываются от большей з/п к меньшей")
+            print("Укажите сколько вакансий вы хотели бы посмотреть\n"
+                  "Если хотите посмотреть весь список, то напишите слово 'все'")
+            user_vacancy = input()
+            if user_vacancy.lower() == 'все':
+                print(sort_sj)
+            else:
+                try:
+                    num_vacancies = int(user_vacancy)
+                    print(sort_sj[:num_vacancies])
+                except ValueError:
+                    print("Пожалуйста, введите число или 'все'")
         else:
             """Зацикливаем метод, пока пользователю не надоест баловаться
             и он не введет нужную нам цифру"""
