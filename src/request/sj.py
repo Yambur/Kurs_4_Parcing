@@ -14,6 +14,6 @@ class RequestSJ(WorkWithAbstract):
 
     def request(self):
         """Заносим парсинг в json файл"""
-        headers = {'X-Api-App-Id': api_key}
+        headers = {'X-Api-App-Id': api_key}  # укажите свой личный api_key
         responce = requests.get(self.url, params=self.params, headers=headers)
         return WorkWithJson.save_json(responce.json()['objects'])
